@@ -6,6 +6,9 @@ Originally PHP Study Guide was a small project that provides step by step guide 
 
 For now it aims to go little bit beyond the Zend Certification and is a good place to start your experience with PHP5.3 or, if you are already an experienced web developer, to return to the basics and remember some details.
 
+
+**For advanced topics and best practicies, please, also consider to take a look at new, awesome and promissing project [PHP The Right Way](http://www.phptherightway.com/) by [Josh Lockhart](https://github.com/codeguy) with some support of PHP community.**
+
 ## Where?
 
 At the moment project is placed at <http://php-guide.evercodelab.com/> and hosted on [GitHub.Pages](http://pages.github.com).
