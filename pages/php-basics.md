@@ -9,7 +9,9 @@ description: ""
 
 ## PHP Tags
 
-Standard Tags – best solution for portability and backwards compatibility, because they are guaranteed to be available and cannot be disabled by changing PHP’s configuration file:
+Standard Tags – best solution for portability and backwards compatibility,
+because they are guaranteed to be available and cannot be disabled by changing
+PHP’s configuration file. 
 
 {% highlight php5 linenos %}
 <?php 
@@ -17,24 +19,32 @@ Standard Tags – best solution for portability and backwards compatibility, bec
 ?>
 {% endhighlight %}
 
-Short Tags - can be disabled (often for XML compliance) with short_open_tag directive in php.ini:
+However there can be only one open tag in the begining of the page `<?php `.
+
+Short Tags - can be disabled (often for XML compliance) with `short_open_tag`
+directive in php.ini:
 
 {% highlight php5 linenos %}
 <?
-
+... code
 ?>
+{% endhighlight %}
+
+This virant of short tag is identical to  `<? echo`:
+{% highlight php5 %}
 <?=$variable ?>
 {% endhighlight %}
 
-Script Tags:
+Script tags is also guaranted access, same as standart tags: 
 
-{% highlight php5 linenos %}
+{% highlight html linenos %}
 <script language="php">
 ... code
 </script>
 {% endhighlight %}
 
-ASP Tags - must be enabled specifically in the php.ini file via the asp_tags directive:
+ASP Tags - must be enabled specifically in the php.ini file via the `asp_tags`
+directive:
 
 {% highlight php5 linenos %}
 <%
@@ -47,14 +57,24 @@ ASP Tags - must be enabled specifically in the php.ini file via the asp_tags dir
 
 ## Comments
 
-Single line comments are ended by either the newline character or a closing PHP tag. Latter can cause unintended output.
+The "one-line" comment styles only comment to the end of the line or the current
+block of PHP code, whichever comes first. This means that HTML code after 
+`// ... ?>` or `# ... ?>` WILL be printed: `?>` breaks out of PHP mode and returns to 
+HTML mode, and // or # cannot influence that. If the `asp_tags` configuration directive
+is enabled, it behaves the same with `// %>` and `# %>`. However, the `</script>` tag
+doesn't break out of PHP mode in a one-line comment.
 
 {% highlight php5 linenos %}
 <?php
 // This is a single line comment
 
-# This is also a single line comment
+# This is also a single line comment 
+# New line comment ?> Here new line comment dont work, and this will be printed
 {% endhighlight %}
+
+Multi-line comments end at the first `*/` encountered. Make sure you don't nest 
+multi-line comments. It is easy to make this mistake if you are trying to comment out
+a large block of code.
 
 {% highlight php5 linenos %}
 <?php
@@ -62,7 +82,14 @@ Single line comments are ended by either the newline character or a closing PHP 
 This is a multi-line
 comment
 */
+
+/* this is also
+commented */ but this dont */
+?>
 {% endhighlight %}
+
+Below you can find DocComment example. For PHP itself it looks like regular comment.
+For futher information you can visit [phpDocumentor](http://www.phpdoc.org/) site.
 
 {% highlight php5 linenos %}
 <?php
@@ -72,19 +99,96 @@ comment
 * @param string $bar
 */
 function foo($bar) { }
+?>
 {% endhighlight %}
 
 * * *
 
 ## Operators
 
-`>>` (Shift Right) – All of the bits in the binary number shift N places to the right in the number, the right most digit(s) falls out, and the resulting number is padded on the left with 0s. A right shift of one is equivalent to dividing a number by two, and tossing the remainder.
+An operator is something that takes one or more values (or expressions, in
+programming jargon) and yields another value (so that the construction itself
+becomes an expression).
 
-`<<` (Shift Left) – All of the digits shift N places to the left, padding the right with 0s. A left shift of one is equivalent to multiplying a number by two.
+Operators can be grouped according to the number of values they take. Unary
+operators take only one value, for example `!` (the logical not operator) or `++`
+(the increment operator). Binary operators take two values, such as the familiar
+arithmetical operators `+` (plus) and `-` (minus), and the majority of PHP operators
+fall into this category. Finally, there is a single ternary operator, `? :`, which
+takes three values; this is usually referred to simply as "the ternary operator"
+(although it could perhaps more properly be called the conditional operator).
 
-`` `command` `` (backticks) – Execute the contents as a shell command (shortcut for shell_exec()) with the same permissions as the webserver.
+The precedence of an operator specifies how "tightly" it binds two expressions
+together. For example, in the expression `1 + 5 * 3`, the answer is 16 and not 18
+because the multiplication `*` operator has a higher precedence than the
+addition `+` operator. Parentheses may be used to force precedence, if
+necessary. For instance: `(1 + 5) * 3` evaluates to 18.
+
+When operators have equal precedence, their associativity decides whether they
+are evaluated starting from the right, or starting from the left.
+
+For the understanding of the operators precede please look at the table on the 
+[PHP manual page](http://php.net/manual/en/language.operators.precedence.php)
+
+### Arithmetic Operators
+
+Works same for the real world:
+
+{% highlight php5 linenos %}
+<?php
+
+echo 2 + 2; // Addition. Will print 4
+echo 3 - 2; // Subtraction. will print 1
+echo 1 * 2; // Multiplication. Will print 2
+echo 4 / 2; // Division . Will print 2
+echo -2; // Negation. Will print -2
+echo 3 % 2 // Modulus. Will print 1
+
+?>
+{% endhighlight %}
+
+The division operator `/` returns a float value unless the two operands are
+integers (or strings that get converted to integers) and the numbers are evenly
+divisible, in which case an integer value will be returned. If try to division
+by zero then `PHP Warning: Division by zero` will be thrown.
+
+Operands of modulus are converted to integers (by stripping the decimal part)
+before processing.
+
+The result of the modulus operator % has the same sign as the dividend — that
+is, the result of $a % $b will have the same sign as $a.
+
+### Assignment Operators
+
+### Bitwise Operators
+
+`>>` (Shift Right) – All of the bits in the binary number shift N places to the right
+in the number, the right most digit(s) falls out, and the resulting number is
+padded on the left with 0s. A right shift of one is equivalent to dividing a
+number by two, and tossing the remainder.
+
+`<<` (Shift Left) – All of the digits shift N places to the left, padding the right
+with 0s. A left shift of one is equivalent to multiplying a number by two.
+
+### Comparison Operators
+
+### Error Control Operators
+
+### Execution Operators
+
+### Incrementing/Decrementing Operators
+
+### Logical Operators
+
+### String Operators
+
+### Array Operators
+
+### Type Operators
 
 `Instanceof` – Returns true if the indicated variable is an instance of the designated class, one of it’s subclasses or a designated interface.
+
+`` `command` `` (backticks) – Execute the contents as a shell command (shortcut for shell_exec()) with the same permissions as the webserver.
 
 * * *
 
