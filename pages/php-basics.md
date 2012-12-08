@@ -111,16 +111,17 @@ programming jargon) and yields another value (so that the construction itself
 becomes an expression).
 
 Operators can be grouped according to the number of values they take. Unary
-operators take only one value, for example `!` (the logical not operator) or `++`
-(the increment operator). Binary operators take two values, such as the familiar
-arithmetical operators `+` (plus) and `-` (minus), and the majority of PHP operators
-fall into this category. Finally, there is a single ternary operator, `? :`, which
-takes three values; this is usually referred to simply as "the ternary operator"
-(although it could perhaps more properly be called the conditional operator).
+operators take only one value, for example `!` (the logical not operator) or
+`++` (the increment operator). Binary operators take two values, such as the
+familiar arithmetical operators `+` (plus) and `-` (minus), and the majority of
+PHP operators fall into this category. Finally, there is a single ternary
+operator, `? :`, which takes three values; this is usually referred to simply as
+"the ternary operator" (although it could perhaps more properly be called the
+conditional operator).
 
 The precedence of an operator specifies how "tightly" it binds two expressions
-together. For example, in the expression `1 + 5 * 3`, the answer is 16 and not 18
-because the multiplication `*` operator has a higher precedence than the
+together. For example, in the expression `1 + 5 * 3`, the answer is 16 and not
+18 because the multiplication `*` operator has a higher precedence than the
 addition `+` operator. Parentheses may be used to force precedence, if
 necessary. For instance: `(1 + 5) * 3` evaluates to 18.
 
@@ -159,6 +160,60 @@ The result of the modulus operator % has the same sign as the dividend — that
 is, the result of $a % $b will have the same sign as $a.
 
 ### Assignment Operators
+
+The basic assignment operator is `=`. It means that the left operand gets set to
+the value of the expression on the right (that is, "gets set to").
+
+The value of an assignment expression is the value assigned. That is, the value
+of `$a` in expression `$a = 3` equal to 3.
+
+For arrays, assigning a value to a named key is performed using the `=>`
+operator. The precedence of this operator is the same as other assignment
+operators.
+
+In addition to the basic assignment operator, there are "combined operators" for
+all of the binary arithmetic, array union and string operators that allow you to
+use a value in an expression and then set its value to the result of that
+expression. For example:
+
+{% highlight php5 linenos %}
+<?php
+$a = 3;
+$a += 5; // Equal 8
+?>
+{% endhighlight %}
+
+Note that the assignment copies the original variable to the new one (assignment
+by value), so changes to one will not affect the other
+
+#### Assignment by Reference
+
+Assignment by reference is also supported, using the `$var = &$othervar;` syntax
+(ampersand `&` before variable). Assignment by reference means that both
+variables end up pointing at the same data, and nothing is copied anywhere.
+
+{% highlight php5 linenos %}
+<?php
+$a = 3;
+$b = &$a; // $b is a reference to $a
+
+print "$a\n"; // prints 3
+print "$b\n"; // prints 3
+
+$a = 4; // change $a
+
+print "$a\n"; // prints 4
+print "$b\n"; // prints 4 as well, since $b is a reference to $a
+?>
+{% endhighlight %}
+
+As of PHP 5, the new operator returns a reference automatically, so assigning
+the result of new by reference results in an **E_DEPRECATED** message in PHP 5.3
+and later.
+
+More information on references and their potential uses can be found in the
+[References Explained](http://php.net/manual/en/language.references.php) section
+of the manual.
 
 ### Bitwise Operators
 
