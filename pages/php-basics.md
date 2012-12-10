@@ -255,6 +255,67 @@ More information, converation and examples you can find in
 
 ### Comparison Operators
 
+Comparison operators, as their name implies, allow you to compare two values.
+
+* `$a == $b` (Equal) — **TRUE** if $a is equal to $b after type juggling.
+* `$a === $b` (Identical) — **TRUE** if $a is equal to $b, and they are of the 
+same type.
+* `$a != $b` `$a <> $b` (Not equal) — **TRUE** if $a is not equal to $b after 
+type juggling.
+* `$a !== $b` (Not identical) — **TRUE** if $a is not equal to $b, or they are 
+not of the same type
+* `$a < $b` (Less than) — **TRUE** if $a is strictly less than $b.
+* `$a > $b` (Greater than) — **TRUE** if $a is strictly greater than $b.
+* `$a <= $b` (Less than or equal to) — **TRUE** if $a is less than or equal to 
+$b.
+* `$a >= $b` (Greater than or equal to) — **TRUE** if $a is greater than or 
+equal to $b.
+
+If you compare a number with a string or the comparison involves numerical
+strings, then each string is converted to a number and the comparison performed
+numerically. The type conversion does not take place when the comparison is 
+`===` or `!==` as this involves comparing the type as well as the value.
+
+For various types, comparison is done according to the following:
+
+* `null` to `string` — Convert NULL to "", or other words to empty string
+* `bool or null` to anything — Convert to `bool`
+* `object` to `object` — When using the comparison operator `==`, object 
+variables are compared in a simple manner, namely: Two object instances are 
+equal if they have the same attributes and values, and are instances of the same 
+class. On the other hand, when using the identity operator `===`, object 
+variables are identical if and only if they refer to the same instance of the 
+same class
+* `string, resource or number` to `string, resource or number` — Translate 
+strings and resources to numbers
+* `array` to `array` — Array with fewer members is smaller, if key from operand 
+1 is not found in operand 2 then arrays are uncomparable, otherwise - compare 
+value by value
+* `array` to anything — array is always grater
+* `object` to anything — object is always grater.
+
+**Warning**: Because of the way floats are represented internally, you should 
+not test two floats for equality. See the documentation for 
+[float](http://php.net/manual/en/language.types.float.php) for more information
+
+#### Ternary Operator
+
+Another conditional operator is the `?:` (or ternary) operator. The expression
+`(expr1) ? (expr2) : (expr3)` evaluates to expr2 if expr1 evaluates to **TRUE**,
+and expr3 if expr1 evaluates to **FALSE**. Since PHP 5.3, it is possible to
+leave out the middle part of the ternary operator. Expression `expr1 ?: expr3`
+returns expr1 if expr1 evaluates to **TRUE**, and expr3 otherwise.
+
+Please note that the ternary operator is a statement, and that it doesn't
+evaluate to a variable, but to the result of a statement. This is important to
+know if you want to return a variable by reference. The statement 
+`return $var == 42 ? $a : $b;` in a return-by-reference function will therefore 
+not work and a warning is issued in later PHP versions.
+
+It is recommended that you avoid "stacking" ternary expressions. PHP's behaviour
+when using more than one ternary operator within a single statement is 
+non-obvious.
+
 ### Error Control Operators
 
 ### Execution Operators
