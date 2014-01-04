@@ -80,4 +80,4 @@ Menus is stored in `_includes/menu`.
 [8]: http://www.evercodelab.com/
 [9]: http://help.github.com/fork-a-repo/
 [10]: http://help.github.com/send-pull-requests/
-[11]: https://github.com/mojombo/jekyll/wiki/usage
+[11]: http://jekyllrb.com/docs/usage/
