@@ -581,7 +581,7 @@ while ($i <= 10) {
 
 ### do-while
 
-`do-while` loops are very similar to `while` loops, except the truth expression is checked at the end of each iteration instead of in the beginning. The main difference from regular while loops is that the first iteration of a `do-while` loop is guaranteed to run.
+`do-while` loops are very similar to `while` loops, except the truth expression is checked at the end of each iteration instead of in the beginning. The main difference from regular `while` loops is that the first iteration of a `do-while` loop is guaranteed to run.
 
 {% highlight php5 linenos %}
 <?php
@@ -592,13 +592,33 @@ do {
 ?>
 {% endhighlight %}
 
-The above loop would run one time exactly, since after the first iteration, when truth expression is checked, it evaluates to FALSE ($i is not bigger than 0) and the loop execution ends.
+The above loop would run one time exactly, since after the first iteration, when truth expression is checked, it evaluates to `FALSE` and the loop execution ends.
+
+### for
+
+for loops are the most complex loops in PHP.
+
+    for (expr1; expr2; expr3)
+        statement
+
+The first expression (`expr1`) is evaluated (executed) once unconditionally at the beginning of the loop.
+
+In the beginning of each iteration, `expr2` is evaluated. If it evaluates to `TRUE`, the loop continues and the nested statements are executed. If it evaluates to `FALSE`, the execution of the loop ends.
+
+At the end of each iteration, `expr3` is executed.
+
+Each of the expressions can be empty or contain multiple expressions separated by commas. In `expr2`, all expressions separated by a comma are evaluated but the result is taken from the last part. `expr2` being empty means the loop should be run indefinitely (PHP implicitly considers it as `TRUE`). This may not be as useless as you might think, since often you'd want to end the loop using a conditional break statement instead of using the for truth expression.
+
+{% highlight php5 linenos %}
+<?php
+for ($i = 1; $i <= 10; $i++) {
+    echo $i;
+}
+?>
+{% endhighlight %}
 
 ### switch
 
-### do
-
-### for
 
 continue
 
