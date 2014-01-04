@@ -579,8 +579,22 @@ while ($i <= 10) {
 ?>
 {% endhighlight %}
 
-### switch
+### do-while
 
+`do-while` loops are very similar to `while` loops, except the truth expression is checked at the end of each iteration instead of in the beginning. The main difference from regular while loops is that the first iteration of a `do-while` loop is guaranteed to run.
+
+{% highlight php5 linenos %}
+<?php
+$i = 0;
+do {
+    echo $i;
+} while ($i > 0);
+?>
+{% endhighlight %}
+
+The above loop would run one time exactly, since after the first iteration, when truth expression is checked, it evaluates to FALSE ($i is not bigger than 0) and the loop execution ends.
+
+### switch
 
 ### do
 
