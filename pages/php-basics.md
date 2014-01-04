@@ -564,9 +564,23 @@ if ($a > $b) {
 
 **Note:** Note that `elseif` and `else if` will only be considered exactly the same when using curly brackets. When using a colon to define your `if/elseif` conditions, you must not separate else if into two words, or PHP will fail with a parse error.
 
+### while
+
+`while` loops are the simplest type of loop in PHP. 
+
+The meaning of a `while` statement is simple. It tells PHP to execute the nested statements repeatedly, as long as the `while` expression evaluates to `TRUE`. The value of the expression is checked each time at the beginning of the loop, so even if this value changes during the execution of the nested statements, execution will not stop until the end of the iteration. If the `while` expression evaluates to `FALSE` from the very beginning, the nested statements won't even be run once.
+
+{% highlight php5 linenos %}
+<?php
+$i = 1;
+while ($i <= 10) {
+    echo $i++;
+}
+?>
+{% endhighlight %}
+
 ### switch
 
-### while
 
 ### do
 
