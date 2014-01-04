@@ -518,6 +518,7 @@ Only scalar.
 ### if
 
 Base syntax:
+
 {% highlight php5 linenos %}
 <?php
 if ($a > $b) {
@@ -530,6 +531,38 @@ if ($a > $b) {
 If expression evaluates to TRUE, PHP will execute statement, and if it evaluates to FALSE - it will ignore it.
 
 `If` statements can be nested infinitely within other `if` statements, which provides you with complete flexibility for conditional execution of the various parts of your program.
+
+### else
+
+`else` extends an `if` statement to execute a statement in case the expression in the `if` statement evaluates to `FALSE`
+
+{% highlight php5 linenos %}
+<?php
+if ($a > $b) {
+    echo "a is greater than b";
+} else {
+    echo "a is NOT greater than b";
+}
+?>
+{% endhighlight %}
+
+### elseif/else if
+
+Like `else`, it extends an `if` statement to execute a different statement in case the original if expression evaluates to `FALSE`. However, unlike `else`, it will execute that alternative expression only if the `elseif` conditional expression evaluates to `TRUE`.
+
+{% highlight php5 linenos %}
+<?php
+if ($a > $b) {
+    echo "a is bigger than b";
+} elseif ($a == $b) {
+    echo "a is equal to b";
+} else {
+    echo "a is smaller than b";
+}
+?>
+{% endhighlight %}
+
+**Note:** Note that `elseif` and `else if` will only be considered exactly the same when using curly brackets. When using a colon to define your `if/elseif` conditions, you must not separate else if into two words, or PHP will fail with a parse error.
 
 ### switch
 
@@ -546,6 +579,8 @@ break
 ### foreach
 
 ### functions
+
+### Alternative syntax for control structures
 
 Paramaters:
 
@@ -570,6 +605,7 @@ Do not have return value.
 echo 'something'; 
 die();
 exit();
+?>
 {% endhighlight %}
 
 End a script in PHP5:
@@ -579,6 +615,7 @@ End a script in PHP5:
 __halt_compiler()
 die();
 exit();
+?>
 {% endhighlight %}
 
 * * *
