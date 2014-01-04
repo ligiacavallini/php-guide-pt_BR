@@ -448,6 +448,7 @@ $greeting = <<<GREETING
 She said "That is $name's" dog!
 While running towards the thief
 GREETING;
+?>
 {% endhighlight %}
 
 ### Integer
@@ -505,6 +506,7 @@ Can not be changed once set.
 <?php
 define('ERROR', 'Something went wrong.');
 const FOO = 'bar';
+?>
 {% endhighlight %}
 
 Only scalar.
@@ -515,25 +517,19 @@ Only scalar.
 
 ### if
 
-Alternate:
-
+Base syntax:
 {% highlight php5 linenos %}
 <?php
-if ():
-  ... 
-else: 
-  ... 
-elseif:
-  ... 
-endif;
+if ($a > $b) {
+    echo "a is bigger than b";
+    $b = $a;
+}
+?>
 {% endhighlight %}
 
-Short:
+If expression evaluates to TRUE, PHP will execute statement, and if it evaluates to FALSE - it will ignore it.
 
-{% highlight php5 linenos %}
-<?php
-$expr ? true : false)
-{% endhighlight %}
+`If` statements can be nested infinitely within other `if` statements, which provides you with complete flexibility for conditional execution of the various parts of your program.
 
 ### switch
 
