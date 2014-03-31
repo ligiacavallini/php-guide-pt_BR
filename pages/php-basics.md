@@ -218,7 +218,7 @@ of the manual.
 ### Bitwise Operators
 
 Bitwise operators allow evaluation and manipulation of specific bits within an
-integer. Integral numbers are internally converted into beats: 
+integer. Integral numbers are internally converted into bits: 
 `5 -> 0101 = 0*8 + 1*4 + 0*2 + 1*1`
 
 Bit shifting in PHP is arithmetic. Bits shifted off either end are discarded.
