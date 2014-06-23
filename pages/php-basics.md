@@ -619,12 +619,33 @@ for ($i = 1; $i <= 10; $i++) {
 
 ### switch
 
-
 continue
 
 break
 
 ### foreach
+Provides an easy way to iterate over arrays and objects. It is posible to customize object iteration.
+
+For directly modify array elements within loop pass `$value` by reference.
+
+{% highlight php5 linenos %}
+<?php
+foreach ($array as $value){
+    echo $value;
+}
+?>
+{% endhighlight %}
+
+{% highlight php5 linenos %}
+<?php
+foreach ($array as $key => $value)
+    echo $key . ' => ' . $value;
+?>
+{% endhighlight %}
+
+`foreach` does not support the ability to suppress error messages using `@`.
+
+PHP 5.5 added the ability to iterate over an array of arrays and unpack the nested array into loop variables by providing a list() as the value. You can provide fewer elements in the list() than there are in the nested array, in which case the leftover array values will be ignored. A notice will be generated if there aren't enough array elements to fill the list().
 
 ### functions
 
