@@ -1,6 +1,5 @@
 title: PHP Study Guide
-auto: true
-pygments: true
+highlighter: pygments
 # markdown: rdiscount
 author:
   name: Roma Lapin
