@@ -1,6 +1,6 @@
 title: PHP Study Guide
 highlighter: pygments
-# markdown: rdiscount
+markdown: kramdown
 author:
   name: Roma Lapin
   email: roma@evercodelab.com
