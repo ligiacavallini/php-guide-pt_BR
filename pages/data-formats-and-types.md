@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Data Formats & Types"
+title: "Formatos e tipos de dados"
 description: ""
 ---
 {% include JB/setup %}
@@ -12,37 +12,37 @@ description: ""
 
 ## XML
 
-Well Formed
+Bem estruturado
 
-* Single root level tag
-* Tags must be opened and closed properly
-* Entities must be well formed
+* Apenas uma tag de nível raiz
+* Tags são abertas e fechadas corretamente
+* Entidades devem ser bem estruturadas
 
-Valid
+Válido
 
-* Well formed
-* Contain a DTD
-* Follow that DTD
+* Bem estruturado
+* Contém um DTD (Definição de Tipo de Documento)
+* Segue o DTD que contém
 
 
 * * *
 
-## Parsing XML
+## Analisando XML
 
 
 DOM
 
 * Document Object Model
-* Loads entire document into ram, then creates an internal tree representation
-* <http://php.net/dom>
+* Carrega todo o documento na memória RAM, e em seguida cria uma representação em forma de árvore
+* <http://php.net/manual/pt_BR/book.dom.php>
 
 SimpleXML
 
-* All objects are instances of the SimpleXMLElement class
-* Uses DOM method
-* Very easy to use
-* Memory Intensive
-* <http://php.net/simplexml>
+* Todos os objetos são instâncias da classe SimpleXMLElement
+* Utiliza método DOM
+* Muito fácil de ser utilizado
+* Faz grande uso de memória
+* <http://php.net/manual/pt_BR/book.simplexml.php>
 
 
 * * *
@@ -53,12 +53,12 @@ SimpleXML
 * `$xml = simplexml_load_string($library);`
 * `object simplexml_load_file ( string $filename [, string $class_name [, int $options [, string $ns [, bool $is_prefix]]]] )`
 * `SimpleXMLElement::xpath()`
-* Adding elements
+* Adicionando elementos
    * `SimpleXMLElement::addChild()`
    * `SimpleXMLElement::addAttribute()`
 * `asXML()`
-* `$library->book[0] = NULL;` - to remove child elements
-* `children()` - return iterator for subnodes
+* `$library->book[0] = NULL;` - para remover elementos filho
+* `children()` - retorna o iterador para subnós
 * `attributes()`
 * Namespaces
    * `SimpleXMLElement::getDocNamespaces()`
@@ -75,11 +75,11 @@ $dom = new DomDocument();
 $dom->load("library.xml");
 $dom->loadXML($xml);
 
-DomDocument::loadHtmlFile(); // and DomDocument::loadHTML()
-DomDocument::save(); // (to a file)
-DomDocument::saveXML(); // (to a string)
-DomDocument::saveHTML(); // (also to a string, but saves an HTML document instead of an XML file)
-DomDocument:saveHTMLFile(); // (to a file in HTML format).
+DomDocument::loadHtmlFile(); // e DomDocument::loadHTML()
+DomDocument::save(); // (para um arquivo)
+DomDocument::saveXML(); // (para uma string)
+DomDocument::saveHTML(); // (também para uma string, mas salva um documento HTML ao invés de um arquivo XML)
+DomDocument:saveHTMLFile(); // (para um arquivo em formato HTML).
 {% endhighlight %}
 
 DomNode
@@ -92,13 +92,13 @@ DomNode
 * `DomNode::cloneNode()`
 * `DomNode::setAttributeNS()`
 
-Removing
+Removendo
 
 * `DomNode::removeAttribute()`
 * `DomNode::removeChild()`
 * `DomCharacterData::deleteData()`
 
-Import 
+Importando 
 * 
 * `dom_import_simplexml($sxml)`
 * `simplexml_import_dom($dom);`
@@ -109,23 +109,23 @@ Import
 ## XPath
 
 
-* W3C Standard supported by many languages
-* Combines the mojo of Regex with some SQL like results
+* Padrão da W3C suportado por diversas linguagens
+* Combina o mojo do Regex com alguns resultados como SQL
 * `$xpath = new DomXPath($dom);`
-* A call to `DomXpath::query()` will return a `DomNodeList` object;
+* Uma chamada para `DomXpath::query()` irá retornar um objeto `DomNodeList`;
 * <http://www.w3schools.com/xpath/xpath_syntax.asp>
 
 
 * * *
 
-## XPath Searches
+## Buscas XPath
 
 
-* `xpath("item")` - will return an array of item objects
-* `xpath("/bookshelf")` - will return all children of the forum node
-* `xpath("//book")` - will return an array of title values
-* `xpath(".")` - will return the current node, `<bookshelf>`
-* `xpath("..")` - will return an empty array, root node `<bookshelf>` does not have a parent element.
+* `xpath("item")` - irá retornar um array de objetos "item"
+* `xpath("/bookshelf")` - irá retornar todos os filhos do nó `</bookshelf>`
+* `xpath("//book")` - irá retornar um array de valores dos nós com titulo "book"
+* `xpath(".")` - irá retornar o nó atual `<bookshelf>`
+* `xpath("..")` - irá retornar um array vazio, pois o nó raiz `<bookshelf>` não possui um elemento pai.
 
 
 * * *
@@ -133,17 +133,17 @@ Import
 ## Web Services
 
 
-* Generic umbrella that describes how disparate systems can integrate with each other over the web
-* Most major sites offer some form of web services:
+* Cobertura genérica que descreve como sistemas diferentes podem se integrar uns com os outros na web
+* Muitos dos maiores sites oferecem alguma forma de web service:
    * Amazon
    * FedEx
    * eBay
    * PayPal
    * del.icio.us
-* Someone else has data you need
-* Easier than scraping pages (also more reliable)
-* Automate processes
-* Provide additional information to your clients
+* Alguém possui dados dos quais você precisa
+* Mais fácil do que realizar page scraping (e também mais confiável)
+* Automatiza processos
+* Fornece informações adicionais para seus clientes
 
 
 * * *
@@ -152,10 +152,10 @@ Import
 
 
 * Representational State Transfer
-* Requests look like filled out forms, can use either GET or POST
-* Response is an XML/JSON document
-* Request and Response is defined by the service provider
-* Services that use the REST architecture are referred to as RESTful services; those who use or provide RESTful services are sometimes humorously referred to as RESTafarians.
+* Requests aparentam como os de formulários completamente preenchidos, pode utilizar tanto GET como POST
+* Response é um documento XML/JSON
+* O Request e Response são definidos pelo fornecedor do serviço
+* Serviços que utilizam da arquitetura REST são chamados de serviços RESTful; aqueles que utilizam ou fornecem serviços RESTful, as vezes são referenciados como RESTafarians, como forma de humor.
 * <http://library.example.com/api.php?devkey=123&action=search&type=book&keyword=style>
 
 
@@ -165,24 +165,24 @@ Import
 ## SOAP
 
 
-* Simple Object Access Protocol (Doesn’t actually stand for anything anymore)
-* Requests are sent using POST
-* Requests are encapsulated within a SOAP Envelope
-* Responses are XML documents with similar Envelope & Body sections
+* Simple Object Access Protocol (Não significa mais nada além disso)
+* Requests são enviados utilizando POST
+* Requests são encapsulados com um SOAP Envelope
+* Responses são documentos XML com Envelope e seções Body similares
 * WSDL Documents
-   * SOAP web services are described by WSDL files
-   * They are designed for automated (not human) consumption
-   * Describes the methods offered by the web service, the parameters required, and the return type, as well as all complex types required by the service
-* PHP5 has built in SOAP support
+   * SOAP web services são descritos pelos arquivos WSDL
+   * São designados para consumo automatizado (não humano)
+   * Descrevem os métodos oferecidos pelo web service, os parâmetros requeridos, e o tipo de retorno, assim como todos os tipos complexos requisitados pelo serviço
+* PHP5 possui suporte nátivo ao SOAP
 
-The functions (generally) take a WSDL file as input, and create an object that mimics the services of the webservice:
+As funções (geralmente) pegam o arquivo WSDL como entrada, e criam um objeto que imita os serviços do webservice:
 
 {% highlight php5 linenos %}
 <?php
 $client = new SoapClient("http://soap.amazon.com/schemas2/AmazonWebServices.wsdl");
 {% endhighlight %}
 
-API call:
+Chamada à API:
 
 {% highlight php5 linenos %}
 <?php
@@ -198,10 +198,10 @@ $client->__getLastRequestHeaders();
 $client->__getLastRequest();
 {% endhighlight %}
 
-[PHP5 SOAP Server](http://php.net/soapserver)
+[PHP5 SOAP Server](http://php.net/manual/pt_BR/class.soapserver.php)
 
-* doesn't include creation of WSDL files (NuSOAP does, Zend Studio does)
-* You can still provide a service either by using an external WSDL file, or merely defining the access methods
+* Não inclui a criação de arquivos WSDL (NuSOAP e Zend Studio incluem)
+* Você ainda pode fornecer um serviço seja pelo uso de um arquivo WSDL externo, ou meramente definindo métodos de acesso
 
 {% highlight php5 linenos %}
 <?php
@@ -214,15 +214,15 @@ $server->handle();
 
 * * *
 
-## DateTime
+## Data e Hora
 
 <http://php.net/manual/en/class.datetime.php>
-<http://php.net/manual/en/book.datetime.php>
-
+<br/>
+<http://php.net/manual/pt_BR/book.datetime.php>
 
 
 * * *
 
-## JSON & AJAX
+## JSON e AJAX
 
-<http://php.net/manual/en/book.json.php>
+<http://php.net/manual/pt_BR/book.json.php>
