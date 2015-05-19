@@ -9,35 +9,34 @@ description: ""
 
 * * * 
 
-## Facts
+## Fatos
 
-
-* Numeric keys, either auto assigned or assigned by you, great when you don’t care how the data is indexed
-* Associative arrays frequently used with databases, or when there should be some key=>value association
-* Multi-Dimensional arrays, or arrays of arrays can contain a lot of data, but can also be complicated to access
-* keys containing only digits are cast to integers
-* array keys are case-sensitive, but type insensitive
+* Chaves numéricas, tanto as assignadas automáticamente como as assignadas por você, são ótimas quando você não está preocupado na forma como os dados serão indexados
+* Frequentemente arrays associativos são utilizados com banco de dados, ou quando deve haver alguma associação chave=>valor
+* Arrays multi-dimensionais (arrays de arrays) podem conter uma grande quantidade de dados, mas também podem ser complicados de serem acessados
+* Chaves contendo apenas digitos são convertidas explícitamente para integers
+* Chaves de array são case-sensitive, mas não type-sensitive
 
 
 * * *
 
-## Iteration
+## Iteração
 
 
-* `foreach()` operates on a copy of the array
+* `foreach()` opera em uma cópia do array
 * `foreach($array AS &$value) { … }`
-* `end()` – move pointer to last element
-* `key()` - retreives key from current position
-* `next()` – advances array pointer one spot then returns current value
-* `prev()` – rewinds the array pointer one spot, then returns the current value
-* `reset()` – resets the array pointer to the beginning of the array
-* `each()` – returns the current key and value from the array, then iterates
+* `end()` – move o ponteiro do array para o último elemento
+* `key()` - obtém a chave da posição atual
+* `next()` – avança o ponteiro do array em uma posição, e então retorna o valor atual
+* `prev()` – volta o ponteiro do array em uma posição, e então retorna o valor atual
+* `reset()` – reseta o ponteiro do array para o inicio do array
+* `each()` – retorna a chave e o valor atual do array, então itera
 * `current()`
 
 
 * * *
 
-## Sorting
+## Ordenação
 
 
 * `bool sort ( array &$array [, int $sort_flags = SORT_REGULAR ] )`
@@ -54,20 +53,20 @@ description: ""
 
 * * *
 
-## Stacks & Queues
+## Pilhas & Filas
 
 
-* Stack, implementing LIFO
+* Pilha, implementando LIFO (last-in, last-out)
    * `int array_push ( array &$array , mixed $var [, mixed $... ] )`
    * `mixed array_pop ( array &$array )`
-* FIFO
+* FIFO (first-in, first-out)
    * `int array_unshift ( array &$array , mixed $var [, mixed $... ] )`
    * `mixed array_shift ( array &$array )`
 
 
 * * *
 
-## Functions
+## Funções
 
 
 [http://php.net/array/](http://php.net/array/)
@@ -79,7 +78,7 @@ description: ""
 * `array array_change_key_case ( array $input [, int $case = CASE_LOWER ] )`
 * `array array_merge ( array $array1 [, array $array2 [, array $... ]] )`
 * `array array_merge_recursive ( array $array1 [, array $... ] )`
-* `array array_splice ( array &$input , int $offset [, int $length = 0 [, mixed $replacement ]] )` - cut out a chunk of an array
+* `array array_splice ( array &$input , int $offset [, int $length = 0 [, mixed $replacement ]] )` - retira um pedaço de um array
 * `bool array_key_exists ( mixed $key , array $search )`
 * `array array_flip ( array $trans )`
 * `array array_reverse ( array $array [, bool $preserve_keys = false ] )`
@@ -95,9 +94,9 @@ description: ""
 
 * * *
 
-## SPL, Objects as arrays
+## SPL, Objetos como arrays
 
-* [http://www.php.net/manual/en/class.arrayobject.php](http://www.php.net/manual/en/class.arrayobject.php)
-* [http://www.php.net/manual/en/class.arrayiterator.php](http://www.php.net/manual/en/class.arrayiterator.php)
-* [http://www.php.net/manual/en/class.recursivearrayiterator.php](http://www.php.net/manual/en/class.recursivearrayiterator.php)
+* [http://www.php.net/manual/pt_BR/class.arrayobject.php](http://www.php.net/manual/pt_BR/class.arrayobject.php)
+* [http://www.php.net/manual/pt_BR/class.arrayiterator.php](http://www.php.net/manual/pt_BR/class.arrayiterator.php)
+* [http://www.php.net/manual/pt_BR/class.recursivearrayiterator.php](http://www.php.net/manual/pt_BR/class.recursivearrayiterator.php)
 
