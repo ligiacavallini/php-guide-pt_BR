@@ -27,7 +27,7 @@ Válido
 
 * * *
 
-## Analisando XML
+## Interpretando XML
 
 
 DOM
