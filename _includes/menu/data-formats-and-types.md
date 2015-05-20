@@ -1,5 +1,5 @@
 * [XML](/pages/data-formats-and-types.html#xml)
-* [Traduzindo XML](/pages/data-formats-and-types.html#traduzindo_xml)
+* [Interpretando XML](/pages/data-formats-and-types.html#interpretando_xml)
 * [SimpleXml](/pages/data-formats-and-types.html#simplexml)
 * [DOM](/pages/data-formats-and-types.html#dom)
 * [XPath](/pages/data-formats-and-types.html#xpath)
@@ -8,4 +8,4 @@
 * [REST](/pages/data-formats-and-types.html#rest)
 * [SOAP](/pages/data-formats-and-types.html#soap)
 * [Data e Hora](/pages/data-formats-and-types.html#data e hora)
-* [JSON & AJAX](/pages/data-formats-and-types.html#json__ajax)
+* [JSON e AJAX](/pages/data-formats-and-types.html#json_e_ajax)
