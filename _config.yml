@@ -7,6 +7,8 @@ author:
   github: memphys
   twitter: memphys
 
+baseurl: '/php-guide-pt_BR'
+
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
