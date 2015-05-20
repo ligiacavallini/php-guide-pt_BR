@@ -11,7 +11,7 @@ description: ""
 
 ## Fatos
 
-* Chaves numéricas, tanto as assignadas automáticamente como as assignadas por você, são ótimas quando você não está preocupado na forma como os dados serão indexados
+* Chaves numéricas, tanto as assignadas automáticamente como as assignadas manualmente, são ótimas quando você não está preocupado na forma como os dados serão indexados
 * Frequentemente arrays associativos são utilizados com banco de dados, ou quando deve haver alguma associação chave=>valor
 * Arrays multi-dimensionais (arrays de arrays) podem conter uma grande quantidade de dados, mas também podem ser complicados de serem acessados
 * Chaves contendo apenas digitos são convertidas explícitamente para integers
@@ -53,7 +53,7 @@ description: ""
 
 * * *
 
-## Pilhas & Filas
+## Pilhas e Filas
 
 
 * Pilha, implementando LIFO (last-in, last-out)
@@ -69,7 +69,7 @@ description: ""
 ## Funções
 
 
-[http://php.net/array/](http://php.net/array/)
+[http://php.net/array/](http://php.net/manual/pt_BR/language.types.array.php)
 
 * `bool array_walk ( array &$array , callback $funcname [, mixed $userdata ] )`
 * `bool array_walk_recursive ( array &$input , callback $funcname [, mixed $userdata ] )`
