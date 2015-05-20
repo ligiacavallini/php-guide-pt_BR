@@ -20,7 +20,7 @@ Bem estruturado
 
 Válido
 
-* Bem estruturado Well formed
+* Bem estruturado
 * Contém um DTD (Definição de Tipo de Documento)
 * Segue o DTD que contém
 
@@ -112,7 +112,7 @@ Importando
 * Padrão da W3C suportado por diversas linguagens
 * Combina o mojo do Regex com alguns resultados como SQL
 * `$xpath = new DomXPath($dom);`
-* Uma chamada para `DomXpath::query()` irá retornar um `DomNodeList` objeto;
+* Uma chamada para `DomXpath::query()` irá retornar um objeto `DomNodeList`;
 * <http://www.w3schools.com/xpath/xpath_syntax.asp>
 
 
@@ -121,9 +121,9 @@ Importando
 ## Buscas XPath
 
 
-* `xpath("item")` - irá retornar um array de objetos `item`
+* `xpath("item")` - irá retornar um array de objetos "item"
 * `xpath("/bookshelf")` - irá retornar todos os filhos do nó `</bookshelf>`
-* `xpath("//book")` - irá retornar um array de valores dos nós com titulo `book`
+* `xpath("//book")` - irá retornar um array de valores dos nós com titulo "book"
 * `xpath(".")` - irá retornar o nó atual `<bookshelf>`
 * `xpath("..")` - irá retornar um array vazio, pois o nó raiz `<bookshelf>` não possui um elemento pai.
 
@@ -134,14 +134,14 @@ Importando
 
 
 * Cobertura genérica que descreve como sistemas diferentes podem se integrar uns com os outros na web
-* Muitos dos maiores sites oferecem alguma forma de web services:
+* Muitos dos maiores sites oferecem alguma forma de web service:
    * Amazon
    * FedEx
    * eBay
    * PayPal
    * del.icio.us
-* Alguém possui dados de que você precisa
-* Mais fácil do que realizar web scraping (e também mais confiável)
+* Alguém possui dados dos quais você precisa
+* Mais fácil do que realizar page scraping (e também mais confiável)
 * Automatiza processos
 * Fornece informações adicionais para seus clientes
 
@@ -198,7 +198,7 @@ $client->__getLastRequestHeaders();
 $client->__getLastRequest();
 {% endhighlight %}
 
-[PHP5 SOAP Server](http://php.net/soapserver)
+[PHP5 SOAP Server](http://php.net/manual/pt_BR/class.soapserver.php)
 
 * Não inclui a criação de arquivos WSDL (NuSOAP e Zend Studio incluem)
 * Você ainda pode fornecer um serviço seja pelo uso de um arquivo WSDL externo, ou meramente definindo métodos de acesso
@@ -217,8 +217,8 @@ $server->handle();
 ## Data e Hora
 
 <http://php.net/manual/en/class.datetime.php>
+<br/>
 <http://php.net/manual/pt_BR/book.datetime.php>
-
 
 
 * * *
