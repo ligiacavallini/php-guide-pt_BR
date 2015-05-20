@@ -41,7 +41,7 @@ SimpleXML
 * Todos os objetos são instâncias da classe SimpleXMLElement
 * Utiliza método DOM
 * Muito fácil de ser utilizado
-* Memory Intensive
+* Faz grande uso de memória
 * <http://php.net/manual/pt_BR/book.simplexml.php>
 
 
