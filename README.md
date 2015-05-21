@@ -2,22 +2,22 @@
 
 ## O que é?
 
-Originalmente o Guia de Estudos PHP era um projeto pequeno com um guia passo-a-passo
+Originalmente, o Guia de Estudos PHP era um projeto pequeno com um guia passo-a-passo
 com informações necessárias para passar na [certificação PHP5.3 ZCE][1].
 
-Agora o foco é ir um pouco além da certificação Zend e é um bom lugar para
+Agora, o foco é ir um pouco além da certificação Zend e ser um bom lugar para
 começar sua experiência com PHP5.3 ou, se você já é um desenvolvedor web experiente,
-para retornar ao básico e relembrar alguns detalhes.
+para retomar os fundamentos e lembrar alguns detalhes.
 
 >Para tópicos avançados e boas práticas, por favor, considere dar uma olhada
->no projeto [PHP The Right Way][2] de [Josh Lockhart][3] com suporte o suporte da comunidade.
+>no projeto [PHP The Right Way][2], mantido por [Josh Lockhart][3] com suporte o apoio da comunidade.
 
 ## Onde?
 
-Neste momento o projeto original está disponível em [http://php-guide.evercodelab.com/][4] e
+Neste momento, o projeto original está disponível em [http://php-guide.evercodelab.com/][4] e
 hospedado no [GitHub.Pages](http://pages.github.com).
 
-Esta tradução está disponível também pelo GitHub.Pages no endereço [https://phpsp.github.io/php-guide-pt_BR][13].
+A tradução em português do Brasil (pt_BR) está disponível no endereço [https://phpsp.github.io/php-guide-pt_BR][13].
 
 ## Fontes
 
@@ -34,7 +34,7 @@ O guia original foi estruturado no Google Docs e depois publicado como [pdf][6].
 
 ## Quem?
 
-O projeto foi feito principalmente por mim, [Roma Lapin][7], e teve suporte da [Evercode Lab][8].
+O projeto foi feito principalmente por [Roma Lapin][7] com apoio da [Evercode Lab][8].
 
 ## Traduções
 O Guia de Estudos PHP está sendo traduzido para as seguintes linguagens:
@@ -56,15 +56,15 @@ Para contribuir, por favor, faça o seguinte.
 * Faça o push para seu repositório `git push origin minha_alteracao`
 * [Envie um Pull Request][10]
 
->Nota importante: este projeto é um fork com foco em tradução, se você deseja de
->fato enviar uma nova seção prefira utilizar o [repositório oficial][12] e, mais tarde,
->este repositório será sincronizado e seremos capazes de traduzir sua contribuição.
+>Nota importante: este projeto é um fork do projeto original, com foco em sua tradução.
+> Se você deseja de fato enviar uma nova seção prefira utilizar o [repositório oficial][12]
+>e, mais tarde, este repositório será sincronizado e seremos capazes de traduzir sua contribuição.
 
 ## Layout do projeto e detalhes
 
-Todo este projeto segue o padrão [jekyll project layout][11].
+Todo este projeto segue um [layout de projeto jekyll][11] padrão.
 
-Toda seção de certificação está presente na pasta `pages`. Toda sub-seção é
+Cada seção da certificação está presente na pasta `pages`. Toda sub-seção é
 parte de uma página.
 
 É utilizado o Pygments para realizar o highlighting do código.
