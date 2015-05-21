@@ -14,7 +14,7 @@ começar sua experiência com PHP5.3 ou, se você já é um desenvolvedor web ex
 para retomar os fundamentos e lembrar alguns detalhes.
 
 >Para tópicos avançados e boas práticas, por favor, considere dar uma olhada
->no projeto [PHP The Right Way][2], mantido por [Josh Lockhart][3] com suporte o apoio da comunidade.
+>no projeto [PHP The Right Way][2], mantido por [Josh Lockhart][3] com apoio da comunidade.
 
 ## Onde?
 
