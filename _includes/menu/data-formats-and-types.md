@@ -7,5 +7,5 @@
 * [Web Services](pages/data-formats-and-types.html#web-services)
 * [REST](pages/data-formats-and-types.html#rest)
 * [SOAP](pages/data-formats-and-types.html#soap)
-* [Data e Hora](pages/data-formats-and-types.html#data-e-hora)
+* [DateTime](pages/data-formats-and-types.html#datetime)
 * [JSON e AJAX](pages/data-formats-and-types.html#json-e-ajax)

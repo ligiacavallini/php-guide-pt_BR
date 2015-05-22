@@ -11,10 +11,10 @@ description: ""
 
 ## Fatos
 
-* Chaves numéricas, tanto as assignadas automáticamente como as assignadas manualmente, são ótimas quando você não está preocupado na forma como os dados serão indexados
+* Chaves numéricas, tanto as definidas automaticamente como as definidas manualmente, são ótimas quando você não se importa com a forma na qual os dados serão indexados
 * Frequentemente arrays associativos são utilizados com banco de dados, ou quando deve haver alguma associação chave=>valor
 * Arrays multi-dimensionais (arrays de arrays) podem conter uma grande quantidade de dados, mas também podem ser complicados de serem acessados
-* Chaves contendo apenas digitos são convertidas explícitamente para integers
+* Chaves contendo apenas digitos são convertidas implícitamente para inteiros
 * Chaves de array são case-sensitive, mas não type-sensitive
 
 
@@ -29,7 +29,7 @@ description: ""
 * `key()` - obtém a chave da posição atual
 * `next()` – avança o ponteiro do array em uma posição, e então retorna o valor atual
 * `prev()` – volta o ponteiro do array em uma posição, e então retorna o valor atual
-* `reset()` – reseta o ponteiro do array para o inicio do array
+* `reset()` – redefine o ponteiro do array para o inicio do array
 * `each()` – retorna a chave e o valor atual do array, então itera
 * `current()`
 
@@ -56,10 +56,10 @@ description: ""
 ## Pilhas e Filas
 
 
-* Pilha, implementando LIFO (last-in, last-out)
+* Pilha, implementando LIFO
    * `int array_push ( array &$array , mixed $var [, mixed $... ] )`
    * `mixed array_pop ( array &$array )`
-* FIFO (first-in, first-out)
+* FIFO
    * `int array_unshift ( array &$array , mixed $var [, mixed $... ] )`
    * `mixed array_shift ( array &$array )`
 

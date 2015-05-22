@@ -15,13 +15,13 @@ description: ""
 Bem estruturado
 
 * Apenas uma tag de nível raiz
-* Tags são abertas e fechadas corretamente
+* Tags devem ser abertas e fechadas corretamente
 * Entidades devem ser bem estruturadas
 
 Válido
 
 * Bem estruturado
-* Contém um DTD (Definição de Tipo de Documento)
+* Contém um DTD
 * Segue o DTD que contém
 
 
@@ -33,7 +33,7 @@ Válido
 DOM
 
 * Document Object Model
-* Carrega todo o documento na memória RAM, e em seguida cria uma representação em forma de árvore
+* Carrega todo o documento na memória RAM, e em seguida cria uma representação interna em forma de árvore
 * <http://php.net/manual/pt_BR/book.dom.php>
 
 SimpleXML
@@ -78,7 +78,7 @@ $dom->loadXML($xml);
 DomDocument::loadHtmlFile(); // e DomDocument::loadHTML()
 DomDocument::save(); // (para um arquivo)
 DomDocument::saveXML(); // (para uma string)
-DomDocument::saveHTML(); // (também para uma string, mas salva um documento HTML ao invés de um arquivo XML)
+DomDocument::saveHTML(); // (também para uma string, mas salva um documento HTML em vez de um arquivo XML)
 DomDocument:saveHTMLFile(); // (para um arquivo em formato HTML).
 {% endhighlight %}
 
@@ -99,7 +99,7 @@ Removendo
 * `DomCharacterData::deleteData()`
 
 Importando 
-* 
+
 * `dom_import_simplexml($sxml)`
 * `simplexml_import_dom($dom);`
 
@@ -110,7 +110,7 @@ Importando
 
 
 * Padrão da W3C suportado por diversas linguagens
-* Combina o mojo do Regex com alguns resultados como SQL
+* Combina o melhor do Regex com alguns resultados no estilo SQL
 * `$xpath = new DomXPath($dom);`
 * Uma chamada para `DomXpath::query()` irá retornar um objeto `DomNodeList`;
 * <http://www.w3schools.com/xpath/xpath_syntax.asp>
@@ -122,7 +122,7 @@ Importando
 
 
 * `xpath("item")` - irá retornar um array de objetos "item"
-* `xpath("/bookshelf")` - irá retornar todos os filhos do nó `</bookshelf>`
+* `xpath("/bookshelf")` - irá retornar todos os filhos do nó `<bookshelf>`
 * `xpath("//book")` - irá retornar um array de valores dos nós com titulo "book"
 * `xpath(".")` - irá retornar o nó atual `<bookshelf>`
 * `xpath("..")` - irá retornar um array vazio, pois o nó raiz `<bookshelf>` não possui um elemento pai.
@@ -152,9 +152,9 @@ Importando
 
 
 * Representational State Transfer
-* Requests aparentam como os de formulários completamente preenchidos, pode utilizar tanto GET como POST
-* Response é um documento XML/JSON
-* O Request e Response são definidos pelo fornecedor do serviço
+* Requisições aparentam como os de formulários completamente preenchidos, pode utilizar tanto GET como POST
+* A Resposta é um documento XML/JSON
+* A Requisição e a Resposta são definidos pelo fornecedor do serviço
 * Serviços que utilizam da arquitetura REST são chamados de serviços RESTful; aqueles que utilizam ou fornecem serviços RESTful, as vezes são referenciados como RESTafarians, como forma de humor.
 * <http://library.example.com/api.php?devkey=123&action=search&type=book&keyword=style>
 
@@ -166,14 +166,14 @@ Importando
 
 
 * Simple Object Access Protocol (Não significa mais nada além disso)
-* Requests são enviados utilizando POST
-* Requests são encapsulados com um SOAP Envelope
-* Responses são documentos XML com Envelope e seções Body similares
+* Requisições são enviadas utilizando POST
+* Requisições são encapsulados com um Envelope SOAP
+* As Respostas são documentos XML com seções Envelope e Body similares
 * WSDL Documents
-   * SOAP web services são descritos pelos arquivos WSDL
-   * São designados para consumo automatizado (não humano)
+   * Web services SOAP são descritos pelos arquivos WSDL
+   * São estruturados para consumo automatizado (não humano)
    * Descrevem os métodos oferecidos pelo web service, os parâmetros requeridos, e o tipo de retorno, assim como todos os tipos complexos requisitados pelo serviço
-* PHP5 possui suporte nátivo ao SOAP
+* PHP5 possui suporte nativo ao SOAP
 
 As funções (geralmente) pegam o arquivo WSDL como entrada, e criam um objeto que imita os serviços do webservice:
 
@@ -189,7 +189,7 @@ Chamada à API:
 $result = $client->KeywordSearchRequest($params);
 {% endhighlight %}
 
-Debugging
+Depurando
 
 {% highlight php5 linenos %}
 <?php
@@ -214,10 +214,8 @@ $server->handle();
 
 * * *
 
-## Data e Hora
+## DateTime
 
-<http://php.net/manual/en/class.datetime.php>
-<br/>
 <http://php.net/manual/pt_BR/book.datetime.php>
 
 

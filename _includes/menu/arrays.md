@@ -1,4 +1,4 @@
-* [Fatos](pages/arrays.html#facts)
+* [Fatos](pages/arrays.html#fatos)
 * [Iteração](pages/arrays.html#iterao)
 * [Ordenação](pages/arrays.html#ordenao)
 * [Pilhas e Filas](pages/arrays.html#pilhas-e-filas)
