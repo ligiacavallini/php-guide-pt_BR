@@ -13,8 +13,8 @@ description: ""
 
 * Chaves numéricas, tanto as definidas automaticamente como as definidas manualmente, são ótimas quando você não se importa com a forma na qual os dados serão indexados
 * Frequentemente arrays associativos são utilizados com banco de dados, ou quando deve haver alguma associação chave=>valor
-* Arrays multi-dimensionais (arrays de arrays) podem conter uma grande quantidade de dados, mas também podem ser complicados de serem acessados
-* Chaves contendo apenas digitos são convertidas implícitamente para inteiros
+* Arrays multidimensionais (arrays de arrays) podem conter uma grande quantidade de dados, mas também podem ser complicados de serem acessados
+* Chaves contendo apenas dígitos são convertidas implicitamente para inteiros
 * Chaves de array são case-sensitive, mas não type-sensitive
 
 
