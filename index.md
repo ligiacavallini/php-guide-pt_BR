@@ -68,7 +68,7 @@ Para contribuir, por favor, faça o seguinte.
 
 Todo este projeto segue um [layout de projeto jekyll][11] padrão.
 
-Cada seção da certificação está presente na pasta `pages`. Toda sub-seção é
+Cada seção da certificação está presente na pasta `pages`. Toda subseção é
 parte de uma página.
 
 É utilizado o Pygments para realizar o highlighting do código.

@@ -56,10 +56,10 @@ description: ""
 ## Pilhas e Filas
 
 
-* Pilha, implementando LIFO
+* Pilha, implementando LIFO (Last-In, First-Out)
    * `int array_push ( array &$array , mixed $var [, mixed $... ] )`
    * `mixed array_pop ( array &$array )`
-* FIFO
+* FIFO (First-In, First-Out)
    * `int array_unshift ( array &$array , mixed $var [, mixed $... ] )`
    * `mixed array_shift ( array &$array )`
 

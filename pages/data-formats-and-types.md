@@ -21,7 +21,7 @@ Bem estruturado
 Válido
 
 * Bem estruturado
-* Contém um DTD
+* Contém um DTD (Definição de Tipo de Documento)
 * Segue o DTD que contém
 
 
@@ -101,7 +101,7 @@ Removendo
 Importando 
 
 * `dom_import_simplexml($sxml)`
-* `simplexml_import_dom($dom);`
+* `simplexml_import_dom($dom)`
 
 
 * * *
