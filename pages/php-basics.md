@@ -9,8 +9,8 @@ description: ""
 
 ## Tags PHP 
 
-Tag Padrão – melhor solução para portabilidade e compatibilidade 
-pois é garantido que sempre será válido e não pode ser desabilitado através do arquivo de configuração.
+Tags Padrão – melhor solução para portabilidade e compatibilidade com versões anteriores
+pois é garantido que sempre serão válidas e não podem ser desabilitadas através do arquivo de configuração.
 
 {% highlight php5 linenos %}
 <?php 
@@ -20,7 +20,7 @@ pois é garantido que sempre será válido e não pode ser desabilitado através
 
 No entanto, pode haver apenas uma tag aberta no início da página `<?php `.
 
-Tag Curta - pode ser desabilitada (normalmente por compatibilidade com XML) na diretiva `short_open_tag`
+Tags Curtas - podem ser desabilitadas (normalmente por compatibilidade com XML) na diretiva `short_open_tag`
 do php.ini:
 
 {% highlight php5 linenos %}
@@ -29,12 +29,12 @@ do php.ini:
 ?>
 {% endhighlight %}
 
-Essa variação da tag curta é idêntica a `<? echo`:
+Essa variação de tags curtas é idêntica a `<? echo`:
 {% highlight php5 %}
 <?=$variable ?>
 {% endhighlight %}
 
-Tag de script também tem a garantia de ser válida, assim como a tag padrão: 
+Tags de script também possuem garantia de serem válidas, assim como as tags padrão: 
 
 {% highlight html linenos %}
 <script language="php">
@@ -42,7 +42,7 @@ Tag de script também tem a garantia de ser válida, assim como a tag padrão:
 </script>
 {% endhighlight %}
 
-Tag ASP - é necessário ser especificamente habilitada no php.ini através da diretiva `asp_tags`:
+Tags ASP - é necessário serem especificamente habilitadas no php.ini através da diretiva `asp_tags`:
 
 {% highlight php5 linenos %}
 <%
@@ -56,9 +56,9 @@ Tag ASP - é necessário ser especificamente habilitada no php.ini através da d
 ## Comentários
 
 O "comentário de uma linha" somente comenta até o final da linha ou o bloco de código PHP 
-atual, o que vier primeiro. Isso significa que o código HTML depois de `// ... ?>` ou `# ... ?>`
+atual, o que vier primeiro. Isso significa que, um código HTML depois de `// ... ?>` ou `# ... ?>`
 será impresso. `?>` finaliza o modo PHP e retorna para modo HTML e // ou # não influenciam nisso.
-Se a diretiva `asp_tags` no arquivo de configuração estiver habilitado, o mesmo acontecerá com `// %>` e `# %>`. 
+Se a diretiva `asp_tags` no arquivo de configuração estiver habilitada, o mesmo acontecerá com `// %>` e `# %>`. 
 Porém a tag `</script>` não finaliza o modo PHP se a linha estiver comentada.
 
 {% highlight php5 linenos %}
@@ -69,8 +69,9 @@ Porém a tag `</script>` não finaliza o modo PHP se a linha estiver comentada.
 # Novo comentário de uma linha ?> Aqui o comentário de uma linha não funciona e isso será impresso
 {% endhighlight %}
 
-Comentário de diversas linhas termina na primeira ocorrência de `*/`. Preste atenção em não utilizar `*/` 
-antes do termino do comentário, é comum cometer este erro se você está tentando comentar um bloco grande de código.
+Comentário de diversas linhas termina na primeira ocorrência de `*/`. Preste atenção em não emendar mais de um bloco 
+de comentários de diversas linhas e também em não utilizar `*/` antes do termino do comentário, é comum cometer este erro 
+se você está tentando comentar um bloco grande de código.
 
 {% highlight php5 linenos %}
 <?php
@@ -90,7 +91,7 @@ Para maiores informações você pode visitar o site [phpDocumentor](http://www.
 {% highlight php5 linenos %}
 <?php
 /**
-* Exemplo API de documentação
+* Exemplo de documentação de API
 *
 * @param string $bar
 */
@@ -103,8 +104,7 @@ function foo($bar) { }
 ## Operadores
 
 Um operador é algo que interage um ou mais valores (ou expressões, no jargão da programação) 
-e então devolve outro valor. 
-Sendo assim os próprios construtores se tornam expressões.
+e então devolve outro valor. De forma que a própria construção se torna uma expressão.
 
 Operadores podem ser agrupados de acordo com o número de valores que estes operam.
 Há três tipos de operadores. Os operadores unários operam em apenas um valor, por 
@@ -113,7 +113,7 @@ Operadores binários operam em dois valores, por exemplo, os operadores aritmét
 `+` (adição), `-` (subtração), entre outros, já que este é o grupo que contém a maioria 
 dos operadores que o PHP suporta.
 O terceiro grupo é do operador ternário `? :`, que opera em três valores. Este é geralmente 
-chamado de operador ternário, porém, talvez fosse mais apropriado ser chamado de operador 
+chamado de "o operador ternário", porém, talvez fosse mais apropriado ser chamado de operador 
 condicional. 
 
 A precedência de um operador especifica qual é a prioridade deste.
@@ -146,9 +146,9 @@ echo 3 % 2 // Módulo (resto da divisão). Vai imprimir 1
 {% endhighlight %}
 
 O operador da divisão `/` retorna um valor com ponto flutuante, a não ser que 
-os dois operados seja inteiros (ou strings que são convertidas para inteiros) 
+os dois operandos sejam inteiros (ou strings que são convertidas para inteiros) 
 e os números sejam inteiramente divisíveis, neste caso um inteiro é retornado.
-Se você tentar dividir algum valor por zero, o PHP irá retornar um aviso: 
+Se você tentar dividir algum valor por zero, o PHP irá exibir um aviso: 
 `PHP Warning: Division by zero`.
 
 Operandos de módulo são convertidos para inteiros (removendo a parte decimal) 
@@ -220,6 +220,11 @@ Operadores bit-a-bit permitem que você avalie e manipule bits específicos dent
 de um inteiro. Números integrais são internamente convertidos para bits:
 `5 -> 0101 = 0*8 + 1*4 + 0*2 + 1*1`
 
+Bit shifting in PHP is arithmetic. Bits shifted off either end are discarded. Left shifts 
+have zeros shifted in on the right while the sign bit is shifted out on the left, meaning 
+the sign of an operand is not preserved. Right shifts have copies of the sign bit shifted 
+in on the left, meaning the sign of an operand is preserved.
+
 Utilize parênteses para ter certeza da precedência desejada. Por exemplo, 
 `$a & $b == true` avalia a equivalência  e então o operador bit-a-bit; 
 enquanto `($a & $b) == true` avalia bit-a-bit e então a equivalência.
@@ -234,9 +239,11 @@ Pelo menos `1`.
 são ativados.
 * `~ $a` (NÃO) — Os bits que estão ativos em $a não são ativados, e vice-versa. 
 Converter `0` em `1` e `1` em `0`
-* `>>` (Deslocamento à direita) – Desloca os bits de $a $b passos para a direita 
+* `>>` (Deslocamento à direita) – Desloca os bits de $a $b passos para a direita, 
+completando as casas descolacas com 0.
 (cada passo significa "divide por dois")
-* `<<` (Deslocamento à esquerda) – Desloca os bits de $a $b passos para a esquerda 
+* `<<` (Deslocamento à esquerda) – Desloca os bits de $a $b passos para a esquerda, 
+completando as casas descolacas com 0. 
 (cada passo significa "multiplica por dois")
 
 Para mais informações sobre conversão e exemplos, dê uma olhada no 
@@ -246,12 +253,13 @@ Para mais informações sobre conversão e exemplos, dê uma olhada no
 
 Operadores de comparação, como diz o nome, permite a comparação de dois valores.
 
-* `$a == $b` (IGUAL) — **TRUE** se $a é igual a $b.
+* `$a == $b` (IGUAL) — **TRUE** se $a é igual a $b após a coerção destes valores.
 * `$a === $b` (IDÊNTICO) — **TRUE** se $a é igual a $b e eles possuam o mesmo tipo
-* `$a != $b` `$a <> $b` (DIFERENTE) — **TRUE** se $a é diferente de $b
+* `$a != $b` `$a <> $b` (DIFERENTE) — **TRUE** se $a é diferente de $b após a coerção 
+destes valores.
 * `$a !== $b` (NÃO IDÊNTICO) — **TRUE** se $a é diferente de $b ou se eles não 
-possuem o mesmo tipo
-* `$a < $b` (MENOR QUE) — **TRUE** se $a é menos que $b.
+possuem o mesmo tipo.
+* `$a < $b` (MENOR QUE) — **TRUE** se $a é menor que $b após a coerção.
 * `$a > $b` (MAIOR QUE) — **TRUE** se $a é maior que $b.
 * `$a <= $b` (MENOR OU IGUAL A) — **TRUE** se $a é menor ou igual a $b.
 * `$a >= $b` (MAIOR OU IGUAL A) — **TRUE** se $a maior ou igual a $b.
@@ -281,7 +289,7 @@ compara valor por valor
 * `object` para qualquer tipo — object é sempre maior.
 
 **Aviso**: Por causa da forma que os números de ponto flutuante são representados 
-internamente, você não deve testar a igualdade de dois números de ponto flutuante
+internamente, você não deve testar a igualdade de dois números de ponto flutuante.
 Para maiores informações, veja a documentação para 
 [número de ponto flutuante](http://php.net/manual/pt_BR/language.types.float.php) 
 
@@ -289,7 +297,7 @@ Para maiores informações, veja a documentação para
 
 Outro operador condicional é o `?:` (ou ternário). A expressão `(expr1) ? (expr2) : (expr3)`
 resulta em expr2 se expr1 for **TRUE** e em expr3 se expr1 for **FALSE**. Desde 
-o PHP 5.3 é possível deixa de fora a parte do meio do operador ternário. A
+o PHP 5.3 é possível deixar de fora a parte do meio do operador ternário. A
 expressão `expr1 ?: expr3` retorna expr1 se expr1 for **TRUE**, caso contrário,
 retorna expr3.
 
@@ -299,7 +307,7 @@ uma variável por referência. Portanto, a expressão `return $var == 42 ? $a : 
 uma função com retorno por referência não irá funcionar e, nas novas versões do PHP, 
 um alerta ocorrerá.
 
-É recomendado evitar o expressões com "empilhamento" ternário . O comportamento do
+É recomendado evitar o empilhamento de expressões ternárias. O comportamento do
 PHP, quando utilizado mais de um operador ternário em uma única expressão, não é 
 óbvio.
 
@@ -309,7 +317,7 @@ O PHP suporta um operador de controle de erro: o sinal `@`. Quando ele precede
 uma expressão em PHP, qualquer mensagem de erro que possa ser gerada por aquela 
 expressão será ignorada.
 
-Se você tem uma função de erro customizada com `set_error_handler()`, ela será 
+Se você tem uma função de erro customizada com `set_error_handler()`, ela ainda será 
 chamada, porém essa função customizada pode (e deve) chamar `error_reporting()`,
 que irá retornar 0 quando a chamada tiver sido precedida por um `@`.
 
@@ -356,7 +364,7 @@ O PHP suporta operadores de pré e pós-incremento e decremento no estilo C.
 O PHP segue a convenção Perl quando tratando-se de operações aritméticas 
 em variáveis de caracteres. Por exemplo, em Perl $a = 'Z'; $a++; o $a se torna 
 'AA'. Note que variáveis de caracteres podem ser incrementadas mas não 
-decrementadas e somente caracteres plain ASCII (a-z e A-Z) são suportados.
+decrementadas e somente caracteres "plain ASCII (a-z e A-Z)" são suportados.
 Incrementar/Decrementar outras variáveis de caracteres não resultam em nada, 
 a string original não é alterada.
 
@@ -396,7 +404,7 @@ na mesma ordem e do mesmo tipo.
 
 O operador + acrescenta os elementos da direita no array da esquerda. Para chaves 
 que existem nos dois arrays, os elementos do array da esquerda serão utilizados e 
-elementos iguais do array do lado direito senão ignorados
+elementos iguais do array do lado direito serão ignorados
 
 ### Operadores de tipo
 
@@ -414,8 +422,8 @@ designada, de uma de suas sub-classes ou de uma interface.
 
 ### Tipos
 
-* Tipos escaláveis: boolean, string, integer, float.
-* Tipos compostos: array, object.
+* Tipos escalares: booleano, string, inteiro, números com ponto flutuante.
+* Tipos compostos: array, objeto.
 * Tipos especiais: resource, null.
 
 ### Strings
@@ -458,16 +466,16 @@ com a precisão de aproximadamente
 
 ### Booleano
 
-* Qualquer inteiro que não seja 0 (zero) é considerado TRUE
-* TRUE e FALSE são case-insensitive e tanto em caixa alta quanto em caixa baixa são comuns.
+* Qualquer número inteiro que não seja 0 (zero) é considerado TRUE
+* TRUE e FALSE são case-insensitive e tanto a representação em caixa alta quanto em caixa baixa são comuns.
 
 ### Arrays
 
 Arrays podem conter qualquer combinação de outros tipos de variáveis, até arrays ou objetos.
 
-### Objetos
+### Objects (Objetos)
 
-Objetos permitem que dados e métodos sejam combinados em uma estrutura coesiva 
+Objetos permitem que dados e métodos sejam combinados em uma estrutura coesa.
 
 ### Resource
 
@@ -482,7 +490,7 @@ funções projetadas para trabalhar com elas.
 * Não tem valor e não tem tipo
 * Não é o mesmo que o inteiro 0 (zero) ou que uma string vazia, já que estes têm um tipo
 
-### Variáveis de variável
+### Variáveis variáveis
 
 {% highlight php5 linenos %}
 <?php
@@ -559,7 +567,7 @@ Parâmetros:
 
 * * *
 
-## Cnstrutores da linguagem
+## Construção da linguagem
 
 Elementos que estão incorporados na língua.
 
@@ -590,7 +598,7 @@ exit();
 Resolve dois problemas:
 
 * Conflito de nomes entre o código que você cria e em classes/functions/constants internas 
-do PHP
+do PHP ou classes/funções/constantes de terceiros.
 * Possibilidade de utilizar um apelido ou de diminuir o nome de classes/functions/constants  
 com o nome muito grande pelo intuito de prevenir conflitos de nomes
 
@@ -601,14 +609,14 @@ Somente três tipos de unidades de códigos são afetadas por namespaces:
 * constantes (constants). 
 
 Um arquivo de código que possua um namespace deve declarar o mesmo no início do arquivo, 
-antes de qualquer código.
+antes de qualquer código - com uma exceção: a palavra chave [declare](http://php.net/manual/pt_BR/control-structures.declare.php).
 
 Namespaces podem ser definidos com sub níveis.
 
 Uma classe pode ser referenciada em três formas:
 
 1. Nome não classificado ou nome de classe não pré-fixado, como `$a = new foo();` ou 
-`foo::staticmethod();`. Se o atual namespace for `currentnamespace`, isso impricará em 
+`foo::staticmethod();`. Se o atual namespace for `currentnamespace`, isso implicará em 
 `currentnamespace\foo`. Se o código for global, sem definição de namespace, isso implicará em 
 `foo`. Apenas um detalhe: nomes não qualificados para funções e constantes irá acarretar em 
 funções e constantes globais caso o namespace da função ou constante não for definida. Veja
@@ -670,16 +678,16 @@ $a = new ArrayObject(array(1)); // instancia um objeto da classe ArrayObject
 
 [http://devzone.zend.com/article/1021](http://devzone.zend.com/article/1021)
 
-O pacote do PHP vem com aproximadamente 86 extensões, tendo uma média de 30 funções cada uma. Faça as contas, é aproximadamente 2500 funções. 
+O pacote do PHP vem com aproximadamente 86 extensões, tendo uma média de 30 funções cada uma. Faça as contas, são aproximadamente 2500 funções. 
 Como se não fosse o suficiente, [O repositório PECL](http://pecl.php.net/) oferece mais de 100 extensões adicionais, e muito mais pode ser encontrado pela internet
 
 * * *
 
 ## Configuração
 
-[http://www.php.net/manual/en/configure.about.php](http://www.php.net/manual/en/configure.about.php)
+[http://php.net/manual/pt_BR/configure.about.php](http://php.net/manual/pt_BR/configure.about.php)
 
-[http://php.net/manual/en/configuration.php](http://php.net/manual/en/configuration.php)
+[http://php.net/manual/pt_BR/configuration.php](http://php.net/manual/pt_BR/configuration.php)
 
 * * *
 
